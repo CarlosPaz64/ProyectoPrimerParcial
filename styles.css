@@ -1,0 +1,26 @@
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    position: relative; /* Establecer posición relativa */
+    z-index: 1000; /* Asegurarse de que el z-index sea mayor que otros elementos */
+}
+
+.sticky {
+    position: fixed; /* Establecer posición fija */
+    top: 0; /* Pegar en la parte superior */
+    width: 100%; /* Opcional, hacer que ocupe el ancho completo */
+}
+
+/* Añade algún estilo adicional según tu diseño */
+
+/* Estilo de la página para llenar el espacio del header */
+body {
+    margin: 0;
+    padding-top: 50px; /* Asegura que el contenido no quede detrás del header pegajoso */
+}
+
+.content {
+    height: 2000px; /* Altura de contenido de ejemplo */
+    background-color: #f4f4f4;
+}
