@@ -1,37 +1,21 @@
-// Función para crear y agregar el header
-function agregarHeader() {
-    // Crear el elemento header
-    var header = document.createElement("header");
-    header.textContent = "Este es el header";
+// Encabezado sticky
+const encabezadoSticky = document.createElement("div");
 
-    // Agregar clases y estilos al header
-    header.style.backgroundColor = "#333";
-    header.style.color = "white";
-    header.style.padding = "10px 0";
-    header.style.position = "relative"; // Posición relativa para permitir que otros elementos floten alrededor
-    header.style.zIndex = "1000"; // Asegurar que el z-index sea mayor que otros elementos
-    
-    // Agregar el header al body
-    document.body.insertBefore(header, document.body.firstChild);
+encabezadoSticky.className = "header";
+encabezadoSticky.id = "myHeader";
 
-    // Obtener la posición original del header
-    header.originalOffsetTop = header.offsetTop;
-}
+// Contenido del encabezado 
+encabezadoSticky.textContent = "duolingo";
 
-// Llamar a la función para agregar el header
-agregarHeader();
+document.body.appendChild(encabezadoSticky);
 
-// Función para hacer pegajoso el header
-window.addEventListener("scroll", function() {
-    var header = document.querySelector("header");
+var sticky = encabezadoSticky.offsetTop;
 
-    // Obtener la posición actual de desplazamiento vertical
-    var scrollPosition = window.scrollY || window.pageYOffset;
-
-    // Si el desplazamiento es mayor que la posición original del header, hacerlo pegajoso
-    if (scrollPosition > header.originalOffsetTop) {
-        header.classList.add("sticky");
+// Función para manejar el evento de scroll
+window.onscroll = function() {
+    if (window.pageYOffset > sticky) {
+        encabezadoSticky.classList.add("sticky");
     } else {
-        header.classList.remove("sticky");
+        encabezadoSticky.classList.remove("sticky");
     }
-});
+};

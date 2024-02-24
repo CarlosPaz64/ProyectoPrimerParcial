@@ -1,26 +1,30 @@
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    position: relative; /* Establecer posición relativa */
-    z-index: 1000; /* Asegurarse de que el z-index sea mayor que otros elementos */
+/*Importaciones de internet que se usaron en la página de duolingo*/
+@import url(https://db.onlinewebfonts.com/c/14936bb7a4b6575fd2eee80a3ab52cc2?family=Feather+Bold);
+
+:root{
+    --principal-color: #58cc02;
 }
 
-.sticky {
-    position: fixed; /* Establecer posición fija */
-    top: 0; /* Pegar en la parte superior */
-    width: 100%; /* Opcional, hacer que ocupe el ancho completo */
-}
-
-/* Añade algún estilo adicional según tu diseño */
-
-/* Estilo de la página para llenar el espacio del header */
 body {
     margin: 0;
-    padding-top: 50px; /* Asegura que el contenido no quede detrás del header pegajoso */
+    font-family: 'Feather Bold';
+}
+
+.header {
+    padding: 10px 16px;
+    background: #ffffff;
+    color: var(--principal-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
 }
 
 .content {
-    height: 2000px; /* Altura de contenido de ejemplo */
-    background-color: #f4f4f4;
+    padding: 16px;
+    padding-top: 50px; 
+}
+
+.sticky + .content {
+    padding-top: 102px; 
 }
