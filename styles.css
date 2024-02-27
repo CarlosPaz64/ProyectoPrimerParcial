@@ -3,6 +3,7 @@
 
 :root{
     --principal-color: #58cc02;
+    --color-gris:  #666767;
 }
 
 body {
@@ -14,6 +15,10 @@ body {
     background: #ffffff;
     color: var(--principal-color);
     width: 100%;
+}
+.content{
+    font-family: 'Feather Bold';
+    color: var(--color-gris);
 }
 
 .sticky + .content {
