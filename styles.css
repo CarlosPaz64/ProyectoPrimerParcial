@@ -12,9 +12,23 @@ body {
 }
 
 .header {
-    background: #ffffff;
-    color: var(--principal-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
     width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    transition: border-color .3s, transform .4s cubic-bezier(.22,1,.36,1);}
+.header img {
+    width: 100px; /* ajusta el tamaño según sea necesario */
+}
+#right-text {
+    color: var(--color-gris);
+    margin-left: auto; /* Alinear a la derecha */
+    padding: 10px; /* Ajusta el padding según sea necesario */
+    white-space: nowrap; /* Evita que el texto se rompa */
 }
 .content{
     font-family: 'Feather Bold';
