@@ -81,3 +81,34 @@ body {
     font-family: var(--fuente);
     color: var(--principal-color);
 }
+.flags {
+    display: flex; /* Hace que los elementos dentro del contenedor se alineen en una fila */
+    align-items: center; /* Centra los elementos verticalmente dentro del contenedor */
+    border-bottom: 2px solid rgb(var(--color-gris));
+    border-top: 2px solid rgb(var(--color-gris));
+}
+
+.flecha-container {
+    display: flex; /* Hace que los elementos dentro del contenedor se alineen en una fila */
+    align-items: center; /* Centra los elementos verticalmente dentro del contenedor */
+}
+
+.flecha-izquierda,
+.flecha-derecha {
+    margin: 0 10px; /* Espacio entre las flechas y el contenido */
+}
+
+.banderas {
+    flex: 1; /* Hace que este elemento ocupe todo el espacio disponible */
+}
+
+.banderas ul {
+    list-style-type: none; /* Quita los estilos de la lista */
+    margin: 0; /* Quita el margen predeterminado de la lista */
+    padding: 0; /* Quita el relleno predeterminado de la lista */
+}
+
+.banderas ul li {
+    display: inline-block; /* Hace que los elementos de la lista se muestren en línea */
+    margin-right: 10px; /* Espacio entre los elementos de la lista */
+}
