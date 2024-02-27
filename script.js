@@ -25,3 +25,46 @@ window.onscroll = function() {
         encabezadoSticky.classList.remove("sticky");
     }
 };
+
+// Creacion de otro div
+
+const debajoHeader = document.createElement("div");
+
+debajoHeader.className = "container";
+debajoHeader.id = "contenido";
+
+// Funcion "carrusel de banderas"
+const carrusel = document.getElementById("carrusel");
+
+function carruselBanderas() {
+    // Crear el elemento <nav>
+    const navElement = document.createElement("nav");
+
+    // Crear el elemento <svg>
+    const svgElement = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    
+    // Establecer atributos del SVG
+    svgElement.setAttribute("class", "_1fESl _1G1lu");
+    svgElement.setAttribute("fill", "none");
+    svgElement.setAttribute("viewBox", "0 0 16 16");
+
+    // Crear el elemento <path>
+    const pathElement = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    pathElement.setAttribute("d", "M10 2L4 8L10 14");
+    pathElement.setAttribute("stroke", "currentColor");
+    pathElement.setAttribute("stroke-linecap", "round");
+    pathElement.setAttribute("stroke-linejoin", "round");
+    pathElement.setAttribute("stroke-width", "2");
+
+    // Agregar el <path> al SVG
+    svgElement.appendChild(pathElement);
+
+    // Agregar el SVG al nav
+    navElement.appendChild(svgElement);
+
+    // Agregar el nav al cuerpo del documento
+    document.body.appendChild(navElement);
+}
+
+// Llamar a la función para crear el carrusel de banderas
+carruselBanderas();
