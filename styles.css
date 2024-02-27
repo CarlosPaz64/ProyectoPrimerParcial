@@ -11,18 +11,9 @@ body {
 }
 
 .header {
-    padding: 10px 16px;
     background: #ffffff;
     color: var(--principal-color);
-    position: fixed;
-    top: 0;
     width: 100%;
-    z-index: 1000; 
-}
-
-.content {
-    padding: 16px;
-    padding-top: 50px; 
 }
 
 .sticky + .content {
