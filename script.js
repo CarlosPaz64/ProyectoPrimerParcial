@@ -27,36 +27,7 @@ window.onscroll = function() {
 const contentDiv = document.querySelector(".content");
 contentDiv.appendChild(encabezadoSticky);
 
-// Función para cambiar el cursor a una mano cuando se pasa el mouse sobre los botones
-function changeCursorToPointer() {
-    document.body.style.cursor = "pointer";
-}
 
-// Función para restaurar el cursor predeterminado cuando se quita el mouse de los botones
-function restoreDefaultCursor() {
-    document.body.style.cursor = "default";
-}
-
-// Debouncing para limitar la velocidad de ejecución de las funciones
-function debounce(func, delay) {
-    let timeoutId;
-    return function() {
-        clearTimeout(timeoutId);
-        timeoutId = setTimeout(func, delay);
-    };
-}
-
-// Obtener los botones
-const botonUno = document.getElementById("botonUno");
-const botonDos = document.getElementById("botonDos");
-
-// Cambiar el cursor a una mano cuando se pasa el mouse sobre los botones
-botonUno.addEventListener("mouseover", debounce(changeCursorToPointer, 100));
-botonDos.addEventListener("mouseover", debounce(changeCursorToPointer, 100));
-
-// Restaurar el cursor predeterminado cuando se quita el mouse de los botones
-botonUno.addEventListener("mouseout", debounce(restoreDefaultCursor, 100));
-botonDos.addEventListener("mouseout", debounce(restoreDefaultCursor, 100));
 
 
 
