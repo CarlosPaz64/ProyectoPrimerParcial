@@ -61,6 +61,7 @@ body {
     margin-left: auto; /* Alinear a la derecha */
     padding: 10px; /* Ajusta el padding según sea necesario */
     white-space: nowrap; /* Evita que el texto se rompa */
+    cursor: pointer;
 }
 .content{
     font-family: var(--fuente);
