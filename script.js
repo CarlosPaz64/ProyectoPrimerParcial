@@ -30,7 +30,7 @@ contentDiv.appendChild(encabezadoSticky);
 
 const container = document.getElementById("myContainer");
 container.innerHTML = `<div class="container">
-<img src="images/man.gif" />
+<img src="images/principal.gif" />
 <div class="text-buttons">
     <h1>¡La forma divertida, efectiva y gratis de aprender un idioma!</h1>
     <button id="botonUno" type="button">Iniciar sesión</button>
@@ -45,50 +45,98 @@ flags.innerHTML=`<div class="flags">
         <path d="M10 2L4 8L10 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
     </svg>
     <div class="banderas">
-        <ul style="transform: translateX(0px);">
-        <li>
-            <a href="ingles" class="">
-                <svg viewBox="0 0 82 66" style="height: 28.9756px; width: 36px;">
-                    <image height="3168" href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image>
-                </svg>
-                <span style="text-decoration: none;">English</span>
-            </a>
-        </li>
-        <li>
-        <a class="TNj94" href="/course/fr/es/Aprender-franc%C3%A9s">
-        <svg viewBox="0 132 82 66" data-test="flag-fr" class="_1v6Jc" style="height: 28.9756px; width: 36px;">
-        <image height="3168" href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg">
-        </image>
-        </svg>
-        <span class="w9lql">Francés</span>
-        </a>
-        </li>
-        <li>
-        <a class="TNj94" href="/course/de/es/Aprender-alem%C3%A1n"><svg viewBox="0 198 82 66" data-test="flag-de" class="_1v6Jc" style="height: 28.9756px; width: 36px;"><image height="3168" href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image></svg><span class="w9lql">Alemán</span></a>
-        </li>
-        <li>
-        <a class="TNj94" href="/course/it/es/Aprender-italiano"><svg viewBox="0 330 82 66" data-test="flag-it" class="_1v6Jc" style="height: 28.9756px; width: 36px;"><image height="3168" href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image></svg><span class="w9lql">Italiano</span></a>
-        </li>
-        <li>
-        <a class="TNj94" href="/course/pt/es/Aprender-portugu%C3%A9s"><svg viewBox="0 594 82 66" data-test="flag-pt" class="_1v6Jc" style="height: 28.9756px; width: 36px;"><image height="3168" href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image></svg><span class="w9lql">Portugués</span></a>
-        </li>
-        <li>
-        <a class="TNj94" href="/course/ca/es/Aprender-catal%C3%A1n"><svg viewBox="0 2244 82 66" data-test="flag-ca" class="_1v6Jc" style="height: 28.9756px; width: 36px;"><image height="3168" href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image></svg><span class="w9lql">Catalán</span></a>
-        </li>
-        <li>
-        <a class="TNj94" href="/course/ru/es/Aprender-ruso"><svg viewBox="0 528 82 66" data-test="flag-ru" class="_1v6Jc" style="height: 28.9756px; width: 36px;"><image height="3168" href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image></svg><span class="w9lql">Ruso</span></a>
-        </li>
-        <li>
-        <a class="TNj94" href="/course/sv/es/Aprender-sueco"><svg viewBox="0 792 82 66" data-test="flag-sv" class="_1v6Jc" style="height: 28.9756px; width: 36px;"><image height="3168" href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image></svg><span class="w9lql">Sueco</span></a>
-        </li>
-    </ul>
+        <ul>
+            <li>
+                    <a href="">
+                        <svg viewBox="0 0 82 66" style="height: 28.9756px; width: 36px;">
+                            <image height="3168" class="ingles" width="82" xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image>
+                        </svg>
+                        <span>Inglés</span>
+                    </a>
+                </li>
+            <li>
+                <a class="frances" href="">
+                    <svg viewBox="0 132 82 66" data-test="flag-fr" class="_1v6Jc" style="height: 28.9756px; width: 36px;">
+                        <image height="3168" class="frances" width="82" xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image>
+                    </svg>
+                    <span class="w9lql">Francés</span>
+                </a>
+            </li>
+            <li>
+                <a class="aleman" href="">
+                    <svg viewBox="0 198 82 66" data-test="flag-de" class="_1v6Jc" style="height: 28.9756px; width: 36px;">
+                        <image height="3168" class="aleman" width="82" xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image>
+                    </svg>
+                    <span class="w9lql">Alemán</span>
+                </a>
+            </li>
+            <li>
+                <a class="italiano" href="">
+                    <svg viewBox="0 330 82 66" data-test="flag-it" class="_1v6Jc" style="height: 28.9756px; width: 36px;">
+                        <image height="3168" class="italiano" width="82" xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image>
+                    </svg>
+                    <span class="w9lql">Italiano</span>
+                </a>
+            </li>
+            <li>
+                <a class="portugues" href="/course/pt/es/Aprender-portugu%C3%A9s">
+                    <svg viewBox="0 594 82 66" data-test="flag-pt" class="_1v6Jc" style="height: 28.9756px; width: 36px;">
+                        <image height="3168" class="portugues" width="82" xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image>
+                    </svg>
+                    <span class="w9lql">Portugués</span>
+                </a>
+            </li>
+            <li>
+                <a class="catalan" href="/course/ca/es/Aprender-catal%C3%A1n">
+                    <svg viewBox="0 2244 82 66" data-test="flag-ca" class="_1v6Jc" style="height: 28.9756px; width: 36px;">
+                        <image height="3168" class="catalan" width="82" xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image>
+                    </svg>
+                    <span class="w9lql">Catalán</span>
+                </a>
+            </li>
+            <li>
+                <a class="ruso" href="/course/ru/es/Aprender-ruso">
+                    <svg viewBox="0 528 82 66" data-test="flag-ru" class="_1v6Jc" style="height: 28.9756px; width: 36px;">
+                        <image height="3168" class="ruso" width="82" xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image>
+                    </svg>
+                    <span class="w9lql">Ruso</span>
+                </a>
+            </li>
+            <li>
+                <a class="sueco" href="/course/sv/es/Aprender-sueco">
+                    <svg viewBox="0 792 82 66" data-test="flag-sv" class="_1v6Jc" style="height: 28.9756px; width: 36px;">
+                        <image height="3168" class="sueco" width="82" xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image>
+                    </svg>
+                    <span class="w9lql">Sueco</span>
+                </a>
+            </li>
+        </ul>
     </div>
     <svg class="flecha-derecha" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M10 2L16 8L10 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
     </svg>
 </nav>
-</div>`;
+</div>
+`;
 
+const divertidoEfectivo = document.createElement("div");
+divertidoEfectivo.className = "funny";
+divertidoEfectivo.id = "DivertidoEfectivo";
+
+const tituloAcompañante = document.createElement("h1");
+tituloAcompañante.textContent = "divertido, efectivo y gratis";
+divertidoEfectivo.appendChild(tituloAcompañante);
+
+const textoAcompañante = document.createElement("p");
+textoAcompañante.innerHTML = `Aprender con Duolingo es divertido y los estudios demuestran que funciona. ¡En nuestras lecciones cortas ganarás puntos y habilitarás nuevas unidades al mismo tiempo que desarrollas tus habilidades de comunicación en la vida real!`;
+divertidoEfectivo.appendChild(textoAcompañante);
+
+
+var imag = document.createElement("img");
+imag.src = 'images/man.gif';
+divertidoEfectivo.appendChild(imag);
+
+document.body.appendChild(divertidoEfectivo);
 
 
 // Dear teacher: 

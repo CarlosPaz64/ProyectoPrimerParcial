@@ -5,7 +5,7 @@
 :root{
     --fuente:  'Feather Bold', sans-serif;
     --principal-color: #58cc02;
-    --color-gris:  #666767;
+    --color-gris:  #808080;
     --color-botones: #58a700;
     --web-ui_button-border-radius: 12px;
     --web-ui_button-line-height: normal;
@@ -36,6 +36,7 @@ button:hover{
 }
 
 body {
+    overflow-x: hidden;
     overflow-y: auto;
     margin: 0;
     font-family: var(--fuente);
@@ -75,7 +76,7 @@ body {
 .container{
     background-color: var(--color-blanco);
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 100px;
     text-align: center; 
     display: flex;
     align-items: center;
@@ -90,22 +91,51 @@ body {
 .flags {
     display: flex; /* Hace que los elementos dentro del contenedor se alineen en una fila */
     align-items: center; /* Centra los elementos verticalmente dentro del contenedor */
-    border-bottom: 2px solid rgb(var(--color-gris));
-    border-top: 2px solid rgb(var(--color-gris));
+    border: 2px solid rgb(var(--color-gris)); /* Agrega un borde alrededor del carrusel */
+    border-radius: 8px; /* Ajusta el radio de borde según sea necesario */
+    justify-content: center; /* Centrar horizontalmente las banderas */
+    overflow: hidden; /* Ocultar las banderas que desbordan el contenedor */
+    margin-top: 130px;
 }
 
 .flecha-container {
-    display: flex; /* Hace que los elementos dentro del contenedor se alineen en una fila */
-    align-items: center; /* Centra los elementos verticalmente dentro del contenedor */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente el contenido */
+    width: calc(100% - 5px); /* Ancho del 100% menos 40px para dejar espacio para las flechas */
+    border-top: 2px solid var(--color-gris); /* Borde superior de 2px con color gris suave */
+    border-width: 8px 0; /* Ancho de borde superior e inferior de 2px */
+    border-bottom: 2px solid var(--color-gris); /* Borde inferior de 2px con color gris suave */
+    border-left: none; /* Sin borde a la izquierda */
+    border-right: none; /* Sin borde a la derecha */
+    border-radius: 8px 8px 0 0; /* Radio de borde solo en las esquinas superiores */
+    padding: 20px; /* Relleno aumentado */
+    font-size: 30px; /* Tamaño de fuente */
 }
+
+
+
 
 .flecha-izquierda,
 .flecha-derecha {
-    margin: 0 10px; /* Espacio entre las flechas y el contenido */
+    margin-top: calc(28.9756px - 24px); /* Ajusta el margen superior para alinear con las banderas */
+    fill: var(--color-gris); /* Color de relleno para las flechas */
+    width: 24px; /* Ancho de las flechas */
+    height: 24px; /* Alto de las flechas */
+}
+.flecha-izquierda:hover,
+.flecha-derecha:hover {
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse sobre las flechas */
 }
 
 .banderas {
     flex: 1; /* Hace que este elemento ocupe todo el espacio disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centrar verticalmente las banderas */
+    margin-left: auto; /* Empujar las banderas hacia el final del contenedor */
+    display: flex;
+    transition: transform 0.3s ease; /* Agregar transición suave al desplazamiento */
 }
 
 .banderas ul {
@@ -117,4 +147,61 @@ body {
 .banderas ul li {
     display: inline-block; /* Hace que los elementos de la lista se muestren en línea */
     margin-right: 10px; /* Espacio entre los elementos de la lista */
+    vertical-align: middle;
 }
+.banderas ul li span {
+    text-decoration: none;
+}
+.flags .banderas{
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+}
+.flags .banderas ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.flags .banderas ul li {
+    margin-right: 10px;
+    display: flex; /* Cambiamos a flex para controlar la posición de los elementos internos */
+    align-items: center; /* Centramos verticalmente los elementos */
+}
+.flags .banderas ul li a {
+    display: flex; /* Cambiamos a flex para controlar la posición de los elementos internos */
+    align-items: center; /* Centramos verticalmente los elementos */
+    color: var(--color-gris);
+    text-decoration: none !important; /* Evita que los enlaces estén subrayados */
+}
+.funny {
+    background-color: var(--color-blanco); /* Color de fondo */
+    padding: 20px; /* Espaciado interno */
+    margin-top: 20px; /* Margen superior */
+    border-radius: 8px; /* Radio de borde */
+    color: var(--principal-color);
+    display: flex; /* Utiliza un diseño flexible */
+    flex-direction: row; /* Alinea los elementos en fila (de izquierda a derecha) */
+    gap: 101px; /* Espacio entre los elementos hijos */
+    margin: 0 auto; /* Centra el contenedor en el medio de su padre */
+    width: 988px; /* Establece el ancho del contenedor */
+    align-items: center; /* Alinea los elementos verticalmente en el centro */
+}
+
+.funny img {
+    max-width: 100px; /* Establece el ancho máximo del GIF */
+}
+
+.funny h1, .funny p {
+    margin: 0; /* Elimina el margen predeterminado */
+    flex-shrink: 0; /* Evita que los elementos se reduzcan para ajustarse */
+    text-align: left; /* Restablece el texto alineado a la izquierda */
+}
+
+
+
+
+
+
+
+
+
