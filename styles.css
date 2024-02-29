@@ -11,6 +11,7 @@
     --web-ui_button-line-height: normal;
     --__internal__border-radius: var(--web-ui_button-border-radius, 12px);
     --color-blanco: #ffffff;
+    --otra-fuente: din-round, sans-seriff;
 }
 /*Estilo de los botones*/
 button{
