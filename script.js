@@ -25,7 +25,7 @@ img.src = 'images/f92d5f2f7d56636846861c458c0d0b6c.svg';
 
 const textoDerecha = document.createElement("nav");
 textoDerecha.id = "right-text";
-textoDerecha.textContent = "Seleccionar idioma: ";
+textoDerecha.textContent = "Idioma de la página: Español";
 
 encabezadoSticky.appendChild(img);
 encabezadoSticky.appendChild(textoDerecha);
@@ -48,9 +48,9 @@ contentDiv.appendChild(encabezadoSticky);
 containerDiv.innerHTML = `<div class="container">
 <img src="images/principal.gif" />
 <div class="text-buttons">
-    <h1>¡La forma divertida, efectiva y gratis de aprender un idioma!</h1>
-    <button id="botonUno" type="button">Iniciar sesión</button>
-    <button id="botonDos" type="button">Hola</button>
+    <h1 id="h1">¡La forma divertida, efectiva y gratis de aprender un idioma!</h1>
+    <button id="botonUno" type="button">EMPIEZA AHORA</button>
+    <button id="botonDos" type="button">YA TENGO UNA CUENTA</button>
 </div>
 </div>`;
 

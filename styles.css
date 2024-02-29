@@ -12,6 +12,15 @@
     --__internal__border-radius: var(--web-ui_button-border-radius, 12px);
     --color-blanco: #ffffff;
     --otra-fuente: din-round, sans-seriff;
+    --color-azul:  #007aff;
+}
+/*Estilo del texto arriba de los botones*/
+#h1{
+    text-align: center; /* Centra horizontalmente el texto */
+    display: flex; /* Activa el modelo de caja flexible */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    height: 100%; /* Ajusta la altura del h1 para centrar verticalmente */
 }
 /*Estilo de los botones*/
 button{
@@ -27,6 +36,7 @@ button{
     display: inline-flex;
     padding: 12px 16px;
     color: var(--color-blanco);
+    text-align: center;
 }
 button:active{
     box-shadow: none;
@@ -35,7 +45,53 @@ button:active{
 button:hover{
     cursor: pointer;
 }
-
+#botonDos{
+    background-color: var(--color-blanco);
+    box-shadow: 0 5px 0 var(--color-gris);
+    font-family: var(--fuente);
+    outline: none;
+    border-radius: var(--__internal__border-radius);
+    border: 2px solid var(--color-gris);
+    border-bottom: 6px solid var(--color-gris);
+    margin: 10px;
+    transition: all 0.1s;
+    display: inline-flex;
+    padding: 12px 16px;
+    color: var(--color-azul);
+    width: 330px;
+    height: 46px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+#botonDos:active{
+    box-shadow: none;
+    transform: translateY(5px);
+}
+#botonUno{
+    background-color: var(--principal-color);
+    box-shadow: 0 5px 0 var(--color-botones);
+    font-family: var(--fuente);
+    outline: none;
+    border-radius: var(--__internal__border-radius);
+    border: 2px solid var(--color-botones);
+    border-bottom: 6px solid var(--color-botones);
+    margin: 10px;
+    transition: all 0.1s;
+    display: inline-flex;
+    padding: 12px 16px;
+    color: var(--color-blanco);
+    width: 330px;
+    height: 46px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+#botonUno:active{
+    box-shadow: none;
+    transform: translateY(5px);
+}
 body {
     overflow-x: hidden;
     overflow-y: auto;
@@ -91,6 +147,12 @@ body {
 }
 .text-buttons{
     margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 .container .p{
     font-family: var(--fuente);
@@ -230,4 +292,9 @@ body {
     line-height: normal;
     margin: 0;
     font-weight: 700;
+}
+section {
+    margin-bottom: 20px; /* Ajusta este valor según la separación deseada */
+    width: 988px;
+    height: 530px;
 }
