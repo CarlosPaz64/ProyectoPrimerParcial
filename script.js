@@ -32,11 +32,13 @@ encabezadoSticky.appendChild(textoDerecha);
 
 var sticky = encabezadoSticky.offsetTop;
 
-window.onscroll = function() {
+window.onscroll = function () {
     if (window.pageYOffset > sticky) {
         encabezadoSticky.classList.add("sticky");
+        encabezadoSticky.style.boxShadow = "0px 0.2vw 1vw rgba(0, 0, 0, 0.1)";
     } else {
         encabezadoSticky.classList.remove("sticky");
+        encabezadoSticky.style.boxShadow = "none";
     }
 };
 
@@ -52,7 +54,7 @@ containerDiv.innerHTML = `<div class="container">
 </div>
 </div>`;
 
-flagsDiv.innerHTML=`<div class="flags">
+flagsDiv.innerHTML = `<div class="flags">
 <nav class="flecha-container">
     <svg class="flecha-izquierda" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M10 2L4 8L10 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -136,7 +138,7 @@ const despuesHeader = document.createElement("div");
 despuesHeader.className = "sections";
 
 despuesHeader.innerHTML =
-`<section class="left">
+    `<section class="left">
 <div class="text-sections">
     <h2 class="title-section">divertido, efectivo y gratis</h2>
     <p>Aprender con Duolingo es divertido y <a class="textAzul" href="https://es.duolingo.com/efficacy">los estudios demuestran que funciona.</a> ¡En nuestras lecciones cortas ganarás puntos y habilitarás nuevas unidades al mismo tiempo que desarrollas tus habilidades de comunicación en la vida real!</p>
@@ -178,14 +180,21 @@ despuesHeader.innerHTML =
 
 document.body.appendChild(despuesHeader);
 
+const scrolleable = document.createElement("div");
+scrolleable.className = "scroll";
 
-// Dear teacher: 
-//  
-// Once you are done trying to 'evaluate' this proyect, 
-// and have realized what a terrible mistake that was, 
-// please increment the following counter as a warning 
-// to the next guy: 
-//  
-// total_hours_wasted_here = 42 
-// When I wrote this, only God and I understood what I was doing 
-// Now, God only knows 
+scrolleable.innerHTML = `
+<div class="scrolleable" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+  <h1>aprende cuando quieras y donde quieras</h1>
+  <button id="botonUno" type="button"><i class="fa fa-apple"></i>Descárgalo en la <p>App Store</p></button>
+  <button href="//play.google.com/store/apps/details?hl=es&amp;id=com.duolingo&amp;referrer=utm_source%3Dduolingo.com%26utm_medium%3Dduolingo_web%26utm_content%3Ddownload_button%26utm_campaign%3Dsplash" tabindex="0">
+    <span>
+      <i class="fab fa-google-play" style="color: #fffff; font-size: 30px;"></i>
+    </span>
+    <span style="font-family: var(--fuente); color: #fffff;"><span><span>Disponible en</span> Google Play</span></span>
+  </button>
+</div>
+`;
+
+document.body.appendChild(scrolleable);
+
