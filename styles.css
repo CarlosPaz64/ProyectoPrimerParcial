@@ -61,6 +61,7 @@ body {
     cursor: pointer;
     height: 42px;
     width: 179px;
+    margin-left: 224px;
 }
 #right-text {
     color: var(--color-gris);
@@ -69,6 +70,7 @@ body {
     white-space: nowrap; /* Evita que el texto se rompa */
     cursor: pointer;
     position: relative;
+    margin-right: 250px;
 }
 .content{
     font-family: var(--fuente);
