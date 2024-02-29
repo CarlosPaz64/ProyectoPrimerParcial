@@ -53,10 +53,14 @@ body {
     z-index: 1000;
     transition: border-color .3s, transform .4s cubic-bezier(.22,1,.36,1);
     cursor: pointer;
+    margin: 0 auto;
+    padding: 0;
 }
 .header img {
     width: 100px; /* ajusta el tamaño según sea necesario */
     cursor: pointer;
+    height: 42px;
+    width: 179px;
 }
 #right-text {
     color: var(--color-gris);
@@ -64,6 +68,7 @@ body {
     padding: 10px; /* Ajusta el padding según sea necesario */
     white-space: nowrap; /* Evita que el texto se rompa */
     cursor: pointer;
+    position: relative;
 }
 .content{
     font-family: var(--fuente);
@@ -198,10 +203,28 @@ body {
 }
 
 
+/*Debjo del header*/
+.left, .right{
+    flex-direction: row;
+    gap: 101px;
+    margin: 0 auto;
+    width: 988px;
+    padding: 0;
+    align-items: center;
+    display: flex;
+    color: var(--principal-color);
+}
 
-
-
-
-
-
-
+.right {
+    flex-direction: row-reverse;
+    margin: 0 auto; /* Añade margen para centrar */
+}
+.title-section {
+    font-size: 48px;
+    max-width: 503px;
+    font-family: var(--fuente);
+    color: var(--principal-color);
+    line-height: normal;
+    margin: 0;
+    font-weight: 700;
+}

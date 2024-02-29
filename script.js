@@ -1,3 +1,20 @@
+// Crear el div content
+const contentDiv = document.createElement("div");
+contentDiv.className = "content";
+
+// Crear el div flags
+const flagsDiv = document.createElement("div");
+flagsDiv.id = "flags";
+
+// Crear el div myContainer
+const containerDiv = document.createElement("div");
+containerDiv.id = "myContainer";
+
+// Agregar los elementos al body del documento
+document.body.appendChild(contentDiv);
+document.body.appendChild(containerDiv);
+document.body.appendChild(flagsDiv);
+
 // Encabezado sticky
 const encabezadoSticky = document.createElement("nav");
 encabezadoSticky.className = "header";
@@ -24,12 +41,9 @@ window.onscroll = function() {
 };
 
 // Agregar el encabezado sticky al contenido
-const contentDiv = document.querySelector(".content");
 contentDiv.appendChild(encabezadoSticky);
 
-
-const container = document.getElementById("myContainer");
-container.innerHTML = `<div class="container">
+containerDiv.innerHTML = `<div class="container">
 <img src="images/principal.gif" />
 <div class="text-buttons">
     <h1>¡La forma divertida, efectiva y gratis de aprender un idioma!</h1>
@@ -38,8 +52,7 @@ container.innerHTML = `<div class="container">
 </div>
 </div>`;
 
-const flags = document.getElementById("flags");
-flags.innerHTML=`<div class="flags">
+flagsDiv.innerHTML=`<div class="flags">
 <nav class="flecha-container">
     <svg class="flecha-izquierda" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M10 2L4 8L10 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -119,24 +132,51 @@ flags.innerHTML=`<div class="flags">
 </div>
 `;
 
-const divertidoEfectivo = document.createElement("div");
-divertidoEfectivo.className = "funny";
-divertidoEfectivo.id = "DivertidoEfectivo";
+const despuesHeader = document.createElement("div");
+despuesHeader.className = "sections";
 
-const tituloAcompañante = document.createElement("h1");
-tituloAcompañante.textContent = "divertido, efectivo y gratis";
-divertidoEfectivo.appendChild(tituloAcompañante);
+despuesHeader.innerHTML =
+`<section class="left">
+<div class="text-sections">
+    <h2 class="title-section">divertido, efectivo y gratis</h2>
+    <p>Aprender con Duolingo es divertido y <a class="textAzul" href="https://es.duolingo.com/efficacy">los estudios demuestran que funciona.</a> ¡En nuestras lecciones cortas ganarás puntos y habilitarás nuevas unidades al mismo tiempo que desarrollas tus habilidades de comunicación en la vida real!</p>
+</div>
+<div class="img-sections">
+    <img src="images/man.gif" alt="">
+</div>
+</section>
 
-const textoAcompañante = document.createElement("p");
-textoAcompañante.innerHTML = `Aprender con Duolingo es divertido y los estudios demuestran que funciona. ¡En nuestras lecciones cortas ganarás puntos y habilitarás nuevas unidades al mismo tiempo que desarrollas tus habilidades de comunicación en la vida real!`;
-divertidoEfectivo.appendChild(textoAcompañante);
+<section class="right">
+<div class="text-sections">
+    <h2 class="title-section">respaldado por la ciencia</h2>
+    <p>Gracias a la combinación de métodos de enseñanza respaldados por la ciencia y un contenido entretenido, creamos cursos que enseñan de forma eficiente a leer, escribir, entender y hablar en otros idiomas.</p>
+</div>
+<div class="img-sections">
+    <img src="images/man.gif" alt="">
+</div>
+</section>
 
+<section class="left">
+<div class="text-sections">
+    <h2 class="title-section">mantén tu motivación</h2>
+    <p>Nuestras funcionalidades y desafíos son divertidos y hacen que aprender se sienta como un juego. ¡Vas a poder formar un hábito de aprendizaje sin esfuerzo! Y, por supuesto, recibirás recordatorios de nuestra adorable mascota, Duo, el búho.</p>
+</div>
+<div class="img-sections">
+    <img src="images/man.gif" alt="">
+</div>
+</section>
 
-var imag = document.createElement("img");
-imag.src = 'images/man.gif';
-divertidoEfectivo.appendChild(imag);
+<section class="right">
+<div class="text-sections">
+    <h2 class="title-section">aprendizaje personalizado</h2>
+    <p class="normalSecciones">Al combinar lo mejor de la inteligencia artificial y las ciencias de idiomas, las lecciones se adaptan según tu desempeño para ayudarte a aprender al nivel adecuado y a tu propio ritmo.</p>
+</div>
+<div class="img-sections">
+    <img src="images/man.gif" alt="">
+</div>
+</section>`;
 
-document.body.appendChild(divertidoEfectivo);
+document.body.appendChild(despuesHeader);
 
 
 // Dear teacher: 
