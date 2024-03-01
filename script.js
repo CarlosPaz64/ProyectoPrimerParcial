@@ -180,21 +180,25 @@ despuesHeader.innerHTML =
 
 document.body.appendChild(despuesHeader);
 
-const scrolleable = document.createElement("div");
-scrolleable.className = "scroll";
+const scrolleableMontado = document.createElement("div");
+scrolleableMontado.className = "scroll";
 
-scrolleable.innerHTML = `
-<div class="scrolleable" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-  <h1>aprende cuando quieras y donde quieras</h1>
-  <button id="botonUno" type="button"><i class="fa fa-apple"></i>Descárgalo en la <p>App Store</p></button>
-  <button href="//play.google.com/store/apps/details?hl=es&amp;id=com.duolingo&amp;referrer=utm_source%3Dduolingo.com%26utm_medium%3Dduolingo_web%26utm_content%3Ddownload_button%26utm_campaign%3Dsplash" tabindex="0">
-    <span>
-      <i class="fab fa-google-play" style="color: #fffff; font-size: 30px;"></i>
-    </span>
-    <span style="font-family: var(--fuente); color: #fffff;"><span><span>Disponible en</span> Google Play</span></span>
-  </button>
+scrolleableMontado.innerHTML = `
+<div class="scrolleable" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 988px; height: 530px; margin: 0 auto;">
+  <h1 style="width: 583px; height: 240px; display: flex; align-items: center; justify-content: center; text-align: center;">aprende cuando quieras y donde quieras</h1>
+  <div style="display: flex; justify-content: center; margin-top: 20px;">
+    <button id="oneBoton" type="button" style="width: 180px; height: 62px; position: relative;">
+      <i class="fa fa-apple" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 34px; color: var(--color-gris);"></i>
+      <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">Descárgalo en<br/>App Store</span>
+    </button>
+    <button id="twoBoton" href="//play.google.com/store/apps/details?hl=es&amp;id=com.duolingo&amp;referrer=utm_source%3Dduolingo.com%26utm_medium%3Dduolingo_web%26utm_content%3Ddownload_button%26utm_campaign%3Dsplash" tabindex="0" style="width: 180px; height: 62px; position: relative;">
+      <i class="fab fa-google-play" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 34px; color: var(--color-gris);"></i>
+      <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">Disponible en<br/>Google Play</span>
+    </button>
+  </div>
 </div>
 `;
 
-document.body.appendChild(scrolleable);
+document.body.appendChild(scrolleableMontado);
 
+const scrolleableReal = document.createElement("");
