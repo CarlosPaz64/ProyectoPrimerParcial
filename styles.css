@@ -17,10 +17,8 @@
 /*Estilo del texto arriba de los botones*/
 #h1{
     text-align: center; /* Centra horizontalmente el texto */
-    display: flex; /* Activa el modelo de caja flexible */
-    justify-content: center; /* Centra horizontalmente el contenido */
     align-items: center; /* Centra verticalmente el contenido */
-    height: 100%; /* Ajusta la altura del h1 para centrar verticalmente */
+    line-height: 1.5;
 }
 /*Estilo de los botones*/
 button{
@@ -144,9 +142,12 @@ body {
     text-align: center; 
     display: flex;
     align-items: center;
+    height: 75vh;
+    width: 100%;
+    margin: 0;
 }
 .text-buttons{
-    margin-left: 20px;
+    margin: 0;
     display: flex;
     flex-direction: column;
     gap: 5px;
