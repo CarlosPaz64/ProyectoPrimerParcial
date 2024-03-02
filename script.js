@@ -1,3 +1,4 @@
+"use strict";
 // Crear el div content
 const contentDiv = document.createElement("div");
 contentDiv.className = "content";
@@ -201,4 +202,186 @@ scrolleableMontado.innerHTML = `
 
 document.body.appendChild(scrolleableMontado);
 
-const scrolleableReal = document.createElement("");
+const scrolleableReal = document.createElement("div");
+scrolleableReal.id = "animationContainer";
+document.body.appendChild(scrolleableReal);
+
+// Creamos el contenedor de la animación
+const animationContainer = document.getElementById("animationContainer");
+animationContainer.style.position = "relative"; // Añadimos posición relativa para poder posicionar el GIF dentro
+
+// Establecer la ruta del GIF
+const gifSrc = "images/duolingo.gif";
+
+// Crear el elemento de imagen GIF
+const gifImage = document.createElement("img");
+gifImage.src = gifSrc;
+gifImage.style.position = "absolute"; // Añadimos posición absoluta para poder ajustar la posición del GIF
+gifImage.style.top = "0"; // Alineamos el GIF al principio del contenedor
+gifImage.style.left = "0"; // Alineamos el GIF a la izquierda del contenedor
+animationContainer.appendChild(gifImage);
+
+// Función para obtener la posición actual del scroll en relación con el documento completo
+function getScrollPercentage() {
+  const windowHeight = window.innerHeight;
+  const documentHeight = document.documentElement.scrollHeight;
+  const scrollTop = window.scrollY;
+  const scrollBottom = scrollTop + windowHeight;
+  const scrollPercentage = (scrollBottom / documentHeight) * 100;
+  return scrollPercentage;
+}
+
+// Función para sincronizar la posición del GIF con la posición del scroll
+function syncGifPosition() {
+  const scrollPercentage = getScrollPercentage();
+  const gifDuration = 5000; // Duración del GIF en milisegundos
+  const gifPosition = (scrollPercentage / 100) * gifDuration;
+  gifImage.style.objectPosition = `0px -${gifPosition}px`;
+}
+
+// Función para manejar el evento de desplazamiento
+function handleScroll() {
+  syncGifPosition();
+}
+
+// Agregar el controlador de eventos al desplazarse
+window.addEventListener("scroll", handleScroll);
+
+// Sincronizar la posición del GIF cuando se cargue la página
+window.addEventListener("load", syncGifPosition);
+
+
+// Crear el contenedor principal
+const superDuo = document.createElement("div");
+superDuo.className = "super";
+superDuo.style.cssText = "display: flex; align-items: center; justify-content: center; gap: 48px; max-width: 100%; width: 100%; height: 900px;";
+
+// Crear el elemento de video
+const video = document.createElement("video");
+video.controls = false; // Desactivar controles para que no sean visibles
+video.setAttribute("width", "50%");
+const sourceVideo = document.createElement("source");
+sourceVideo.setAttribute("src", "images/superduper.mp4");
+sourceVideo.setAttribute("type", "video/mp4");
+video.appendChild(sourceVideo);
+
+// Configurar evento para reproducir el video cuando se haya interactuado con la página
+document.addEventListener("DOMContentLoaded", function(event) {
+    video.play();
+});
+
+superDuo.appendChild(video);
+
+// Crear el contenedor para la imagen y el botón
+const contentContainer = document.createElement("div");
+contentContainer.style.cssText = "display: flex; flex-direction: column; align-items: center;";
+
+// Crear la imagen
+const imgElement = document.createElement("img");
+imgElement.setAttribute("alt", "Súper Duolingo");
+imgElement.setAttribute("class", "videoSuper");
+imgElement.setAttribute("height", "55");
+imgElement.setAttribute("src", "https://d35aaqx5ub95lt.cloudfront.net/images/splash/dd7453522d3192d4df06d4652508b8bc.svg");
+imgElement.setAttribute("width", "339");
+contentContainer.appendChild(imgElement);
+
+// Crear el botón
+const button = document.createElement("button");
+button.className = "animate";
+const buttonText = document.createElement("span");
+buttonText.className = "textoButtons";
+buttonText.textContent = "Prueba 2 semanas gratis";
+button.appendChild(buttonText);
+contentContainer.appendChild(button);
+
+// Agregar el contenedor de imagen y botón al contenedor principal
+superDuo.appendChild(contentContainer);
+
+// Agregar el contenedor principal al body del documento
+document.body.appendChild(superDuo);
+
+
+const ultimasSections = document.createElement("div");
+ultimasSections.className = "sections";
+
+ultimasSections.innerHTML = `<section class="left">
+<div class="text-sections">
+    <h2 class="title-section">duolingo english test</h2>
+    <p>Nuestro examen de inglés es conveniente, rápido y económico. El Duolingo English Test integra los últimos avances en la ciencia e inteligencia artificial para dar a todas las personas la posibilidad de elegir dónde y cuándo hacer el examen y que puedan dar lo mejor de sí.</p>
+    <button class="button-section">CERTIFICA TU INGLÉS</button>
+</div>
+<div class="img-sections">
+    <img src="images/man.gif" alt="">
+</div>
+</section>
+
+<section class="right">
+<div class="text-sections">
+    <h2 class="title-section">duolingo for schools</h2>
+    <p>Maestras y maestros: ¡estamos para ayudarlos! Nuestra herramienta gratuita ayuda a tus estudiantes a aprender idiomas a través de la app de Duolingo, tanto dentro como fuera del salón de clases.
+    </p>
+    <button class="button-section">POTENCIA TU SALÓN DE CLASES</button>
+</div>
+<div class="img-sections">
+    <img src="images/man.gif" alt="">
+</div>
+</section>
+
+<section class="left">
+<div class="text-sections">
+    <h2 class="title-section">duolingo abc</h2>
+    <p>¡Desde aprender idiomas hasta alfabetismo! Con lecciones de fonética y cuentos divertidos, Duolingo ABC enseña a niños y niñas de entre 3 y 8 años a leer y escribir… ¡y es totalmente gratis!
+    </p>
+    <button class="button-section">CONOCE DUOLINGO ABC</button>
+</div>
+<div class="img-sections">
+    <img src="images/man.gif" alt="">
+</div>
+</section>
+
+<section class="right">
+<div class="text-sections">
+    <h2 class="title-section">duolingo math</h2>
+    <p class="normalSecciones">¡Prueba nuestras lecciones cortas y gratis para matemáticas! Con Duolingo Math, los estudiantes podrán adelantarse en sus clases de matemáticas y los adultos podrán practicar para mejorar su destreza matemática.</p>
+    <button class="button-section">MEJORA EN MATEMÁTICA</button>
+</div>
+<div class="img-sections">
+    <img src="images/man.gif" alt="">
+</div>
+</section>
+`;
+
+document.body.appendChild(ultimasSections);
+
+// Crear el contenedor antes del footer
+const antesFooter = document.createElement("div");
+antesFooter.className = "before-footer";
+
+// Crear el elemento <h1>
+const h1Element = document.createElement("h1");
+h1Element.textContent = "aprende idiomas con duolingo";
+h1Element.style.textAlign = "center"; // Alinear el texto al centro
+
+// Crear el botón
+const buttonElement = document.createElement("button");
+buttonElement.textContent = "EMPIEZA AHORA";
+buttonElement.style.width = "330px";
+buttonElement.style.height = "50px";
+buttonElement.style.display = "block"; // Hacer que el botón sea un bloque para centrarlo
+
+// Agregar el h1 y luego el botón al contenedor antes del footer
+antesFooter.appendChild(h1Element);
+antesFooter.appendChild(buttonElement);
+
+// Estilos CSS para centrar el contenedor
+antesFooter.style.display = "flex";
+antesFooter.style.flexDirection = "column"; // Apilar elementos verticalmente
+antesFooter.style.justifyContent = "center";
+antesFooter.style.alignItems = "center";
+//antesFooter.style.height = "100vh"; // Ajustar la altura si es necesario
+
+// Agregar el contenedor antes del footer al documento
+document.body.appendChild(antesFooter);
+
+const pocoAntesFooter = document.createElement("div");
+pocoAntesFooter.innerHTML = ``;
