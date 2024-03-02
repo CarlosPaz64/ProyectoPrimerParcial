@@ -1,4 +1,3 @@
-"use strict";
 // Crear el div content
 const contentDiv = document.createElement("div");
 contentDiv.className = "content";
@@ -47,13 +46,14 @@ window.onscroll = function () {
 contentDiv.appendChild(encabezadoSticky);
 
 containerDiv.innerHTML = `<div class="container">
-<img src="images/principal.gif" />
+<img src="images/inicial.svg" width="424" height="424" style="width: 424px; height: 424px;"/>
 <div class="text-buttons">
     <h1 id="h1">¡La forma divertida, efectiva y gratis de aprender un idioma!</h1>
     <button id="botonUno" type="button">EMPIEZA AHORA</button>
     <button id="botonDos" type="button">YA TENGO UNA CUENTA</button>
 </div>
-</div>`;
+</div>
+`;
 
 flagsDiv.innerHTML = `<div class="flags">
 <nav class="flecha-container">
@@ -142,40 +142,40 @@ despuesHeader.innerHTML =
     `<section class="left">
 <div class="text-sections">
     <h2 class="title-section">divertido, efectivo y gratis</h2>
-    <p>Aprender con Duolingo es divertido y <a class="textAzul" href="https://es.duolingo.com/efficacy">los estudios demuestran que funciona.</a> ¡En nuestras lecciones cortas ganarás puntos y habilitarás nuevas unidades al mismo tiempo que desarrollas tus habilidades de comunicación en la vida real!</p>
+    <p class="contenidoSeccion">Aprender con Duolingo es divertido y <a text-decoration="none"; class="textAzul" href="https://es.duolingo.com/efficacy">los estudios demuestran que funciona.</a> ¡En nuestras lecciones cortas ganarás puntos y habilitarás nuevas unidades al mismo tiempo que desarrollas tus habilidades de comunicación en la vida real!</p>
 </div>
 <div class="img-sections">
-    <img src="images/man.gif" alt="">
+    <img src="images/section1.svg" width="530px" height="530px" alt="">
 </div>
 </section>
 
 <section class="right">
 <div class="text-sections">
     <h2 class="title-section">respaldado por la ciencia</h2>
-    <p>Gracias a la combinación de métodos de enseñanza respaldados por la ciencia y un contenido entretenido, creamos cursos que enseñan de forma eficiente a leer, escribir, entender y hablar en otros idiomas.</p>
+    <p class="contenidoSeccion">Gracias a la combinación de métodos de enseñanza respaldados por la ciencia y un contenido entretenido, creamos cursos que enseñan de forma eficiente a leer, escribir, entender y hablar en otros idiomas.</p>
 </div>
 <div class="img-sections">
-    <img src="images/man.gif" alt="">
+    <img src="images/section2.svg" width="530px" height="530px" alt="">
 </div>
 </section>
 
 <section class="left">
 <div class="text-sections">
     <h2 class="title-section">mantén tu motivación</h2>
-    <p>Nuestras funcionalidades y desafíos son divertidos y hacen que aprender se sienta como un juego. ¡Vas a poder formar un hábito de aprendizaje sin esfuerzo! Y, por supuesto, recibirás recordatorios de nuestra adorable mascota, Duo, el búho.</p>
+    <p class="contenidoSeccion">Nuestras funcionalidades y desafíos son divertidos y hacen que aprender se sienta como un juego. ¡Vas a poder formar un hábito de aprendizaje sin esfuerzo! Y, por supuesto, recibirás recordatorios de nuestra adorable mascota, Duo, el búho.</p>
 </div>
 <div class="img-sections">
-    <img src="images/man.gif" alt="">
+    <img src="images/section3.svg" width="530px" height="530px"alt="">
 </div>
 </section>
 
 <section class="right">
 <div class="text-sections">
     <h2 class="title-section">aprendizaje personalizado</h2>
-    <p class="normalSecciones">Al combinar lo mejor de la inteligencia artificial y las ciencias de idiomas, las lecciones se adaptan según tu desempeño para ayudarte a aprender al nivel adecuado y a tu propio ritmo.</p>
+    <p class="contenidoSeccion">Al combinar lo mejor de la inteligencia artificial y las ciencias de idiomas, las lecciones se adaptan según tu desempeño para ayudarte a aprender al nivel adecuado y a tu propio ritmo.</p>
 </div>
 <div class="img-sections">
-    <img src="images/man.gif" alt="">
+    <img src="images/section4.svg" width="530px" height="530px" alt="">
 </div>
 </section>`;
 
@@ -307,46 +307,46 @@ ultimasSections.className = "sections";
 ultimasSections.innerHTML = `<section class="left">
 <div class="text-sections">
     <h2 class="title-section">duolingo english test</h2>
-    <p>Nuestro examen de inglés es conveniente, rápido y económico. El Duolingo English Test integra los últimos avances en la ciencia e inteligencia artificial para dar a todas las personas la posibilidad de elegir dónde y cuándo hacer el examen y que puedan dar lo mejor de sí.</p>
+    <p class="contenidoSeccion">Nuestro examen de inglés es conveniente, rápido y económico. El Duolingo English Test integra los últimos avances en la ciencia e inteligencia artificial para dar a todas las personas la posibilidad de elegir dónde y cuándo hacer el examen y que puedan dar lo mejor de sí.</p>
     <button class="button-section">CERTIFICA TU INGLÉS</button>
 </div>
 <div class="img-sections">
-    <img src="images/man.gif" alt="">
+    <img src="images/section5.svg" width="530px" height="530px" alt="">
 </div>
 </section>
 
 <section class="right">
 <div class="text-sections">
     <h2 class="title-section">duolingo for schools</h2>
-    <p>Maestras y maestros: ¡estamos para ayudarlos! Nuestra herramienta gratuita ayuda a tus estudiantes a aprender idiomas a través de la app de Duolingo, tanto dentro como fuera del salón de clases.
+    <p class="contenidoSeccion">Maestras y maestros: ¡estamos para ayudarlos! Nuestra herramienta gratuita ayuda a tus estudiantes a aprender idiomas a través de la app de Duolingo, tanto dentro como fuera del salón de clases.
     </p>
     <button class="button-section">POTENCIA TU SALÓN DE CLASES</button>
 </div>
 <div class="img-sections">
-    <img src="images/man.gif" alt="">
+    <img src="images/section6.svg"  width="530px" height="530px"alt="">
 </div>
 </section>
 
 <section class="left">
 <div class="text-sections">
     <h2 class="title-section">duolingo abc</h2>
-    <p>¡Desde aprender idiomas hasta alfabetismo! Con lecciones de fonética y cuentos divertidos, Duolingo ABC enseña a niños y niñas de entre 3 y 8 años a leer y escribir… ¡y es totalmente gratis!
+    <p class="contenidoSeccion">¡Desde aprender idiomas hasta alfabetismo! Con lecciones de fonética y cuentos divertidos, Duolingo ABC enseña a niños y niñas de entre 3 y 8 años a leer y escribir… ¡y es totalmente gratis!
     </p>
     <button class="button-section">CONOCE DUOLINGO ABC</button>
 </div>
 <div class="img-sections">
-    <img src="images/man.gif" alt="">
+    <img src="images/section7.svg" width="530px" height="530px" alt="">
 </div>
 </section>
 
 <section class="right">
 <div class="text-sections">
     <h2 class="title-section">duolingo math</h2>
-    <p class="normalSecciones">¡Prueba nuestras lecciones cortas y gratis para matemáticas! Con Duolingo Math, los estudiantes podrán adelantarse en sus clases de matemáticas y los adultos podrán practicar para mejorar su destreza matemática.</p>
+    <p class="contenidoSeccion">¡Prueba nuestras lecciones cortas y gratis para matemáticas! Con Duolingo Math, los estudiantes podrán adelantarse en sus clases de matemáticas y los adultos podrán practicar para mejorar su destreza matemática.</p>
     <button class="button-section">MEJORA EN MATEMÁTICA</button>
 </div>
 <div class="img-sections">
-    <img src="images/man.gif" alt="">
+    <img src="images/section8.svg" width="530px" height="530px" alt="">
 </div>
 </section>
 `;
@@ -378,10 +378,123 @@ antesFooter.style.display = "flex";
 antesFooter.style.flexDirection = "column"; // Apilar elementos verticalmente
 antesFooter.style.justifyContent = "center";
 antesFooter.style.alignItems = "center";
+antesFooter.style.marginBottom = "-280px"; // Ajustar según sea necesario
+
 //antesFooter.style.height = "100vh"; // Ajustar la altura si es necesario
 
 // Agregar el contenedor antes del footer al documento
 document.body.appendChild(antesFooter);
 
 const pocoAntesFooter = document.createElement("div");
-pocoAntesFooter.innerHTML = ``;
+
+var imagFoot = document.createElement("img");
+imagFoot.src = "images/animacionFooter.svg";
+
+
+pocoAntesFooter.style.paddingTop = "5px"; // Ajustar según sea necesario
+
+pocoAntesFooter.appendChild(imagFoot);
+
+document.body.appendChild(pocoAntesFooter);
+
+// Se viene el footer
+// Inicio del footer
+
+// Crear el contenedor footer
+const footer = document.createElement("footer");
+footer.className = "footer";
+
+// Crear el contenedor footerArriba dentro del footer
+const footerArriba = document.createElement("div");
+footerArriba.className = "upside";
+
+// Aplicar estilos CSS al footerArriba para mostrarlo horizontalmente y centrarlo horizontalmente
+footerArriba.style.display = "flex";
+footerArriba.style.justifyContent = "center"; // Centrar horizontalmente
+
+// Crear y agregar los 5 divs al footerArriba
+for (let i = 0; i < 6; i++) {
+    const div = document.createElement("div");
+    div.style.width = "178px";
+    div.style.height = "412.6px";
+
+    // Crear el elemento h1
+    const h1Element = document.createElement("h1");
+
+    // Aplicar estilos individuales a cada h1
+    if (i === 0) {
+        h1Element.textContent = "Sobre nosotros";
+    } else if (i === 1) {
+        h1Element.textContent = "Productos";
+    } else if (i === 2) {
+        h1Element.textContent = "Aplicaciones";
+    } else if (i === 3) {
+        h1Element.textContent = "Ayuda y soporte";
+    } else if (i === 4) {
+        h1Element.textContent = "Términos y privacidad";
+    } else {
+        // Aquí estamos en el último div, agregamos el div "Social" dentro de este
+        const socialDiv = document.createElement("div");
+        socialDiv.textContent = "Social";
+        socialDiv.style.backgroundColor = "lightcoral"; // Color de fondo del div "Social"
+        div.appendChild(socialDiv); // Agregar el div "Social" dentro del último div
+        continue; // Saltar al siguiente ciclo
+    }
+
+    // Crear el elemento ul
+    const ulElement = document.createElement("ul");
+
+    // Agregar algunos elementos li al ul con información diferente para cada div
+    if (i === 0) {
+        addLiContent(ulElement, ["Cursos", "Programas", "Instructores"]);
+    } else if (i === 1) {
+        addLiContent(ulElement, ["María Pérez", "Juan Martínez", "Luisa González"]);
+    } else if (i === 2) {
+        addLiContent(ulElement, ["Ayudar a las personas a aprender idiomas de manera efectiva y divertida"]);
+    } else if (i === 3) {
+        addLiContent(ulElement, ["Método interactivo", "Lecciones personalizadas", "Retroalimentación instantánea"]);
+    } else if (i === 4) {
+        addLiContent(ulElement, ["99% de efectividad comprobada", "Estudios respaldados", "Más de 300 millones de usuarios"]);
+    }
+
+    // Agregar estilos al ul dentro del footerArriba
+    ulElement.style.display = "flex";
+    ulElement.style.flexDirection = "column";
+    ulElement.style.gap = "10px";
+    ulElement.style.listStyle = "none";
+
+    // Agregar estilos individuales a cada div
+    if (i === 0) {
+        div.style.backgroundColor = "lightgray"; // Por ejemplo, cambiar el color de fondo del primer div
+    } else if (i === 1) {
+        div.style.backgroundColor = "lightblue"; // Por ejemplo, cambiar el color de fondo del segundo div
+    } else if (i === 2) {
+        div.style.backgroundColor = "lightgreen"; // Por ejemplo, cambiar el color de fondo del tercer div
+    } else if (i === 3) {
+        div.style.backgroundColor = "lightpink"; // Por ejemplo, cambiar el color de fondo del cuarto div
+    } else if (i === 4) {
+        div.style.backgroundColor = "lightsalmon"; // Por ejemplo, cambiar el color de fondo del quinto div
+    }
+
+    // Agregar el h1 y el ul al div
+    div.appendChild(h1Element);
+    div.appendChild(ulElement);
+
+    // Agregar el div al footerArriba
+    footerArriba.appendChild(div);
+}
+
+// Agregar el footerArriba al footer
+footer.appendChild(footerArriba);
+
+// Agregar el footer al cuerpo del documento
+document.body.appendChild(footer);
+
+// Función para agregar contenido a los elementos li
+function addLiContent(ul, contentArray) {
+    contentArray.forEach(content => {
+        const liElement = document.createElement("li");
+        liElement.textContent = content;
+        ul.appendChild(liElement);
+    });
+}

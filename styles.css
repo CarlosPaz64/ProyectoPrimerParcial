@@ -12,7 +12,7 @@
     --web-ui_button-line-height: normal;
     --__internal__border-radius: var(--web-ui_button-border-radius, 12px);
     --color-blanco: #ffffff;
-    --otra-fuente: 'DIN Next Rounded LT W01 Regular';
+    --otra-fuente: din-round, sans-serif;
     --color-azul:  #007aff;
     --color-duo-super: rgba(16, 15, 62);
 }
@@ -21,6 +21,15 @@
     text-align: center; /* Centra horizontalmente el texto */
     align-items: center; /* Centra verticalmente el contenido */
     line-height: 1.5;
+    width: 480px;
+    height: 88px;
+    font-size: 32px;
+    font-family: 32px din-round, sans-serif;
+    line-height: normal;
+    flex: -1;
+    margin: 10px 0 0;
+    margin-bottom: 50px;
+    max-width: 345px;
 }
 /*Estilo de los botones*/
 button{
@@ -112,6 +121,7 @@ body {
     cursor: pointer;
     margin: 0 auto;
     padding: 0;
+    height: 72px;
 }
 .header img {
     width: 100px; /* ajusta el tamaño según sea necesario */
@@ -132,6 +142,10 @@ body {
 .content{
     font-family: var(--fuente);
     color: var(--color-gris);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .sticky + .content {
@@ -139,14 +153,12 @@ body {
 }
 .container{
     background-color: var(--color-blanco);
-    padding: 10px;
-    margin-top: 100px;
+    padding: 10px 15px 20px;
     text-align: center; 
     display: flex;
+    justify-content: center;
     align-items: center;
     height: 65vh;
-    width: 100%;
-    margin: 0;
 }
 .text-buttons{
     margin: 0;
@@ -155,7 +167,10 @@ body {
     gap: 5px;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: left;
+}
+.container img{
+    display: inline-block;
 }
 .container .p{
     font-family: var(--fuente);
@@ -301,6 +316,9 @@ section {
     width: 988px;
     height: 530px;
 }
+.contenidoSeccion{
+    color: var(--color-gris);
+}
 /*Botones del scrolleable*/
 #oneBoton, #twoBoton{
     background-color: var(--color-blanco);
@@ -369,4 +387,12 @@ section {
     text-align: center;
     justify-content: center;
     align-items: center;
+}
+.textAzul{
+    text-decoration: none; /* Quitar el subrayado */
+    color: var(--color-azul); 
+}
+.footer {
+    background-color: var(--principal-color);
+    font-family: var(--otra-fuente);
 }
