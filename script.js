@@ -455,3 +455,4 @@ footer.innerHTML = ` <ul>
 </ul>`;
 
 document.body.appendChild(footer);
+

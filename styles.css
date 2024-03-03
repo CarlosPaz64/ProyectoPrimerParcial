@@ -397,17 +397,23 @@ section {
 footer {
     background: var(--principal-color);
     font-family: var(--fuente);
+    text-align: center; /* Centra horizontalmente el contenido */
+    margin-top: -10px;
 }
+
 footer ul {
     list-style: none;
-    display: inline-block;
+    display: inline-block; /* Alinea los elementos ul horizontalmente */
     color: var(--ul-footer);
     width: 178px;
     height: 412.6px;
     cursor: pointer;
-  }
+    vertical-align: top;
+    text-align: left;
+}
+
 footer h3 {
     font-weight: 100;
     margin-bottom: 0;
     color: var(--h3-footer);
-  }
+}
