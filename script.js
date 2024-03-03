@@ -456,3 +456,37 @@ footer.innerHTML = ` <ul>
 
 document.body.appendChild(footer);
 
+const ultimoDiv = document.createElement("div");
+ultimoDiv.className = "last-one";
+
+ultimoDiv.innerHTML = `
+<h2>Idioma de la página</h2>
+<ul>
+<li><a tabindex="0">العربية</a></li>
+<li><a tabindex="0">বাংলা</a></li>
+<li><a tabindex="0">Čeština</a></li>
+<li><a tabindex="0">Deutsch</a></li>
+<li><a tabindex="0">Ελληνικά</a></li>
+<li><a tabindex="0">English</a></li>
+<li><a tabindex="0">Español</a></li>
+<li><a tabindex="0">Français</a></li>
+<li><a tabindex="0">हिंदी</a></li>
+<li><a tabindex="0">Magyar</a></li>
+<li><a tabindex="0">Bahasa Indonesia</a></li>
+<li><a tabindex="0">Italiano</a></li>
+<li><a tabindex="0">日本語</a></li>
+<li><a tabindex="0">한국어</a></li>
+<li><a tabindex="0">Nederlands</a></li>
+<li><a tabindex="0">Polski</a></li>
+<li><a tabindex="0">Português</a></li>
+<li><a tabindex="0">Română</a></li>
+<li><a tabindex="0">Русский</a></li>
+<li><a tabindex="0">తెలుగు</a></li>
+<li><a tabindex="0">ภาษาไทย</a></li>
+<li><a tabindex="0">Tagalog</a></li>
+<li><a tabindex="0">Türkçe</a></li>
+<li><a tabindex="0">Українською</a></li>
+<li><a tabindex="0">Tiếng Việt</a></li>
+<li><a tabindex="0">中文</a></li></ul>`;
+
+document.body.appendChild(ultimoDiv);
