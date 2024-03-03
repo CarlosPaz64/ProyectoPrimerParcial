@@ -15,6 +15,8 @@
     --otra-fuente: din-round, sans-serif;
     --color-azul:  #007aff;
     --color-duo-super: rgba(16, 15, 62);
+    --h3-footer: #D7FFB8;
+    --ul-footer: #A5ED6E;
 }
 /*Estilo del texto arriba de los botones*/
 #h1{
@@ -392,7 +394,20 @@ section {
     text-decoration: none; /* Quitar el subrayado */
     color: var(--color-azul); 
 }
-.footer {
-    background-color: var(--principal-color);
-    font-family: var(--otra-fuente);
+footer {
+    background: var(--principal-color);
+    font-family: var(--fuente);
 }
+footer ul {
+    list-style: none;
+    display: inline-block;
+    color: var(--ul-footer);
+    width: 178px;
+    height: 412.6px;
+    cursor: pointer;
+  }
+footer h3 {
+    font-weight: 100;
+    margin-bottom: 0;
+    color: var(--h3-footer);
+  }

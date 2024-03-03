@@ -404,97 +404,54 @@ document.body.appendChild(pocoAntesFooter);
 const footer = document.createElement("footer");
 footer.className = "footer";
 
-// Crear el contenedor footerArriba dentro del footer
-const footerArriba = document.createElement("div");
-footerArriba.className = "upside";
+footer.innerHTML = ` <ul>
+<h3>Sobre nosotros</h3>
+<li>Cursos</li>
+<li>Misión</li>
+<li>Método de enseñanza</li>
+<li>Eficacia</li>
+<li>Equipo</li>
+<li>Investigación</li>
+<li>Empleo</li>
+<li>Guía para uso de marca</li>
+<li>Tienda</li>
+<li>Prensa</li>
+<li>Inversionistas</li>
+<li>Contáctanos</li>
+</ul>
+<ul>
+<h3>Productos</h3>
+<li>Duolingo</li>
+<li>Duolingo for Schools</li>
+<li>Duolingo English Test</li>
+<li>Podcast</li>
+<li>Duolingo for Business</li>
+<li>Súper Duolingo</li>
+<li>Regala Súper Duolingo</li>
+</ul>
+<ul>
+<h3>Aplicaciones</h3>
+<li>Duolingo para Android</li>
+<li>Duolingo para iOS</li>
+</ul>
+<ul>
+<h3>Ayuda y soporte</h3>
+<li>App de Duolingo</li>
+<li>Schools</li>
+<li>Duolingo English Test</li>
+<li>Estado</li>
+</ul>
+<ul>
+<h3>Términos y privacidad</h3>
+<li>Normas de la comunidad</li>
+<li>Términos</li>
+<li>Privacidad</li>
+<h3>Social</h3>
+<li>Blog</li>
+<li>Instagram</li>
+<li>Facebook</li>
+<li>Twitter</li>
+<li>YouTube</li>
+</ul>`;
 
-// Aplicar estilos CSS al footerArriba para mostrarlo horizontalmente y centrarlo horizontalmente
-footerArriba.style.display = "flex";
-footerArriba.style.justifyContent = "center"; // Centrar horizontalmente
-
-// Crear y agregar los 5 divs al footerArriba
-for (let i = 0; i < 6; i++) {
-    const div = document.createElement("div");
-    div.style.width = "178px";
-    div.style.height = "412.6px";
-
-    // Crear el elemento h1
-    const h1Element = document.createElement("h1");
-
-    // Aplicar estilos individuales a cada h1
-    if (i === 0) {
-        h1Element.textContent = "Sobre nosotros";
-    } else if (i === 1) {
-        h1Element.textContent = "Productos";
-    } else if (i === 2) {
-        h1Element.textContent = "Aplicaciones";
-    } else if (i === 3) {
-        h1Element.textContent = "Ayuda y soporte";
-    } else if (i === 4) {
-        h1Element.textContent = "Términos y privacidad";
-    } else {
-        // Aquí estamos en el último div, agregamos el div "Social" dentro de este
-        const socialDiv = document.createElement("div");
-        socialDiv.textContent = "Social";
-        socialDiv.style.backgroundColor = "lightcoral"; // Color de fondo del div "Social"
-        div.appendChild(socialDiv); // Agregar el div "Social" dentro del último div
-        continue; // Saltar al siguiente ciclo
-    }
-
-    // Crear el elemento ul
-    const ulElement = document.createElement("ul");
-
-    // Agregar algunos elementos li al ul con información diferente para cada div
-    if (i === 0) {
-        addLiContent(ulElement, ["Cursos", "Programas", "Instructores"]);
-    } else if (i === 1) {
-        addLiContent(ulElement, ["María Pérez", "Juan Martínez", "Luisa González"]);
-    } else if (i === 2) {
-        addLiContent(ulElement, ["Ayudar a las personas a aprender idiomas de manera efectiva y divertida"]);
-    } else if (i === 3) {
-        addLiContent(ulElement, ["Método interactivo", "Lecciones personalizadas", "Retroalimentación instantánea"]);
-    } else if (i === 4) {
-        addLiContent(ulElement, ["99% de efectividad comprobada", "Estudios respaldados", "Más de 300 millones de usuarios"]);
-    }
-
-    // Agregar estilos al ul dentro del footerArriba
-    ulElement.style.display = "flex";
-    ulElement.style.flexDirection = "column";
-    ulElement.style.gap = "10px";
-    ulElement.style.listStyle = "none";
-
-    // Agregar estilos individuales a cada div
-    if (i === 0) {
-        div.style.backgroundColor = "lightgray"; // Por ejemplo, cambiar el color de fondo del primer div
-    } else if (i === 1) {
-        div.style.backgroundColor = "lightblue"; // Por ejemplo, cambiar el color de fondo del segundo div
-    } else if (i === 2) {
-        div.style.backgroundColor = "lightgreen"; // Por ejemplo, cambiar el color de fondo del tercer div
-    } else if (i === 3) {
-        div.style.backgroundColor = "lightpink"; // Por ejemplo, cambiar el color de fondo del cuarto div
-    } else if (i === 4) {
-        div.style.backgroundColor = "lightsalmon"; // Por ejemplo, cambiar el color de fondo del quinto div
-    }
-
-    // Agregar el h1 y el ul al div
-    div.appendChild(h1Element);
-    div.appendChild(ulElement);
-
-    // Agregar el div al footerArriba
-    footerArriba.appendChild(div);
-}
-
-// Agregar el footerArriba al footer
-footer.appendChild(footerArriba);
-
-// Agregar el footer al cuerpo del documento
 document.body.appendChild(footer);
-
-// Función para agregar contenido a los elementos li
-function addLiContent(ul, contentArray) {
-    contentArray.forEach(content => {
-        const liElement = document.createElement("li");
-        liElement.textContent = content;
-        ul.appendChild(liElement);
-    });
-}
