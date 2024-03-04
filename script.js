@@ -36,6 +36,10 @@ styleElement.textContent = `
     margin-bottom: 50px;
     max-width: 345px;
 }
+#cambioBoton{
+    font-family = var(--otra-fuente);
+    font-weight = bold;
+}
 button:active{
     box-shadow: none;
     transform: translateY(5px);
@@ -459,7 +463,15 @@ window.onscroll = function () {
         encabezadoSticky.style.boxShadow = "none";
     }
 };
+window.addEventListener('scroll', function() {
+    var boton = document.getElementById('right-text');
 
+    if (window.pageYOffset > 300) { // Cambia 200 por la altura a la que deseas cambiar el texto a un botón
+        boton.innerHTML = '<button id="cambioBoton">EMPIEZA AHORA</button>';
+    } else {
+        boton.innerHTML = 'Idioma de la página: Español';
+    }
+});
 // Agregar el encabezado sticky al contenido
 contentDiv.appendChild(encabezadoSticky);
 
