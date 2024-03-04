@@ -1,12 +1,430 @@
-// Crear el div content
+const styleElement = document.createElement('style');
+styleElement.textContent = `
+/*Importaciones de internet que se usaron en la página de duolingo*/
+/*Importacion del Feather Bold como tipo de letra principal*/
+@import url(https://db.onlinewebfonts.com/c/14936bb7a4b6575fd2eee80a3ab52cc2?family=Feather+Bold);
+@import url(https://db.onlinewebfonts.com/c/ab596f21664c5582567537d241e2a53e?family=DIN+Next+Rounded+LT+W01+Regular);
+
+:root{
+    --fuente:  'Feather Bold', sans-serif;
+    --principal-color: #58cc02;
+    --color-gris:  #808080;
+    --color-botones: #58a700;
+    --web-ui_button-border-radius: 12px;
+    --web-ui_button-line-height: normal;
+    --__internal__border-radius: var(--web-ui_button-border-radius, 12px);
+    --color-blanco: #ffffff;
+    --otra-fuente: 'DIN Next Rounded LT W01 Regular', sans-serif;
+    --color-azul:  #007aff;
+    --color-duo-super: rgba(16, 15, 62);
+    --h3-footer: #D7FFB8;
+    --ul-footer: #A5ED6E;
+    --color-botones-enemigos: #434343;
+}
+/*Estilo del texto arriba de los botones*/
+#h1{
+    text-align: center; /* Centra horizontalmente el texto */
+    align-items: center; /* Centra verticalmente el contenido */
+    line-height: 1.5;
+    width: 480px;
+    height: 88px;
+    font-size: 32px;
+    font-family: 32px din-round, sans-serif;
+    line-height: normal;
+    flex: -1;
+    margin: 10px 0 0;
+    margin-bottom: 50px;
+    max-width: 345px;
+}
+button:active{
+    box-shadow: none;
+    transform: translateY(5px);
+}
+button:hover{
+    cursor: pointer;
+}
+#botonDos{
+    background-color: var(--color-blanco);
+    box-shadow: 0 5px 0 var(--color-gris);
+    font-family: var(--otra-fuente);
+    font-weight: bold;
+    outline: none;
+    border-radius: var(--__internal__border-radius);
+    border: 2px solid var(--color-gris);
+    border-bottom: 6px solid var(--color-gris);
+    margin: 10px;
+    transition: all 0.1s;
+    display: inline-flex;
+    padding: 12px 16px;
+    color: var(--color-azul);
+    width: 330px;
+    height: 46px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+}
+#botonDos:active{
+    box-shadow: none;
+    transform: translateY(5px);
+}
+#botonUno{
+    background-color: var(--principal-color);
+    box-shadow: 0 5px 0 var(--color-botones);
+    font-family: var(--otra-fuente);
+    font-weight: bold;
+    outline: none;
+    border-radius: var(--__internal__border-radius);
+    border: 2px solid var(--color-botones);
+    border-bottom: 6px solid var(--color-botones);
+    margin: 10px;
+    transition: all 0.1s;
+    display: inline-flex;
+    padding: 12px 16px;
+    color: var(--color-blanco);
+    width: 330px;
+    height: 46px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+}
+#botonUno:active{
+    box-shadow: none;
+    transform: translateY(5px);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-blanco);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    transition: border-color .3s, transform .4s cubic-bezier(.22,1,.36,1);
+    cursor: pointer;
+    margin: 0 auto;
+    padding: 0;
+    height: 72px;
+}
+.header img {
+    width: 100px; /* ajusta el tamaño según sea necesario */
+    cursor: pointer;
+    height: 42px;
+    width: 179px;
+    margin-left: 224px;
+}
+#right-text {
+    color: var(--color-gris);
+    margin-left: auto; /* Alinear a la derecha */
+    padding: 10px; /* Ajusta el padding según sea necesario */
+    white-space: nowrap; /* Evita que el texto se rompa */
+    cursor: pointer;
+    position: relative;
+    margin-right: 250px;
+    font-family: var(--otra-fuente);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.content{
+    font-family: var(--fuente);
+    color: var(--color-gris);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sticky + .content {
+    padding-top: 102px; 
+}
+.container{
+    background-color: var(--color-blanco);
+    padding: 10px 15px 20px;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+}
+.text-buttons{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+.container img{
+    display: inline-block;
+}
+.container .p{
+    font-family: var(--fuente);
+    color: var(--principal-color);
+}
+.flags {
+    display: flex; /* Hace que los elementos dentro del contenedor se alineen en una fila */
+    align-items: center; /* Centra los elementos verticalmente dentro del contenedor */
+    border: 2px solid rgb(var(--color-gris)); /* Agrega un borde alrededor del carrusel */
+    border-radius: 8px; /* Ajusta el radio de borde según sea necesario */
+    justify-content: center; /* Centrar horizontalmente las banderas */
+    overflow: hidden; /* Ocultar las banderas que desbordan el contenedor */
+    margin-top: 130px;
+}
+
+.flecha-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente el contenido */
+    width: calc(100% - 5px); /* Ancho del 100% menos 40px para dejar espacio para las flechas */
+    border-top: 2px solid var(--color-gris); /* Borde superior de 2px con color gris suave */
+    border-width: 2px 0; /* Ancho de borde superior e inferior de 2px */
+    border-bottom: 2px solid var(--color-gris); /* Borde inferior de 2px con color gris suave */
+    border-left: none; /* Sin borde a la izquierda */
+    border-right: none; /* Sin borde a la derecha */
+    border-radius: 8px 8px 0 0; /* Radio de borde solo en las esquinas superiores */
+    padding: 20px; /* Relleno aumentado */
+    font-size: 30px; /* Tamaño de fuente */
+    font-family: var(--otra-fuente);
+    font-weight: bold;
+}
+
+
+
+
+.flecha-izquierda,
+.flecha-derecha {
+    margin-top: calc(28.9756px - 24px); /* Ajusta el margen superior para alinear con las banderas */
+    fill: var(--color-gris); /* Color de relleno para las flechas */
+    width: 24px; /* Ancho de las flechas */
+    height: 24px; /* Alto de las flechas */
+}
+.flecha-izquierda:hover,
+.flecha-derecha:hover {
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse sobre las flechas */
+}
+
+.banderas {
+    flex: 1; /* Hace que este elemento ocupe todo el espacio disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centrar verticalmente las banderas */
+    margin-left: auto; /* Empujar las banderas hacia el final del contenedor */
+    display: flex;
+    transition: transform 0.3s ease; /* Agregar transición suave al desplazamiento */
+}
+
+.banderas ul {
+    list-style-type: none; /* Quita los estilos de la lista */
+    margin: 0; /* Quita el margen predeterminado de la lista */
+    padding: 0; /* Quita el relleno predeterminado de la lista */
+}
+
+.banderas ul li {
+    display: inline-block; /* Hace que los elementos de la lista se muestren en línea */
+    margin-right: 10px; /* Espacio entre los elementos de la lista */
+    vertical-align: middle;
+}
+.banderas ul li span {
+    text-decoration: none;
+}
+.flags .banderas{
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+}
+.flags .banderas ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.flags .banderas ul li {
+    margin-right: 10px;
+    display: flex; /* Cambiamos a flex para controlar la posición de los elementos internos */
+    align-items: center; /* Centramos verticalmente los elementos */
+}
+.flags .banderas ul li a {
+    display: flex; /* Cambiamos a flex para controlar la posición de los elementos internos */
+    align-items: center; /* Centramos verticalmente los elementos */
+    color: var(--color-gris);
+    text-decoration: none !important; /* Evita que los enlaces estén subrayados */
+}
+/*Debajo del header*/
+.left, .right{
+    flex-direction: row;
+    gap: 101px;
+    margin: 0 auto;
+    width: 988px;
+    padding: 0;
+    align-items: center;
+    display: flex;
+    color: var(--principal-color);
+    font-family: var(--otra-fuente);
+    letter-spacing: 1px;
+}
+
+.right {
+    flex-direction: row-reverse;
+    margin: 0 auto; /* Añade margen para centrar */
+}
+.title-section {
+    font-size: 48px;
+    max-width: 503px;
+    font-family: var(--fuente);
+    color: var(--principal-color);
+    line-height: normal;
+    margin: 0;
+    font-weight: 700;
+}
+section {
+    margin-bottom: 20px; /* Ajusta este valor según la separación deseada */
+    width: 988px;
+    height: 530px;
+}
+.contenidoSeccion{
+    color: var(--color-gris);
+}
+/*Botones del scrolleable*/
+#oneBoton, #twoBoton{
+    background-color: var(--color-blanco);
+    box-shadow: 0 5px 0 var(--color-gris);
+    font-family: var(--fuente);
+    outline: none;
+    border-radius: var(--__internal__border-radius);
+    border: 2px solid var(--color-gris);
+    border-bottom: 6px solid var(--color-gris);
+    margin: 10px;
+    transition: all 0.1s;
+    display: inline-flex;
+    padding: 12px 16px;
+    color: var(--color-gris);
+    width: 330px;
+    height: 46px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--otra-fuente);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+#oneBoton:active, #twoBoton:active{
+    box-shadow: none;
+    transform: translateY(5px);
+}
+.super{
+    background-color: var(--color-duo-super);
+}
+.animate{
+    background-color: var(--color-blanco);
+    box-shadow: 0 5px 0 var(--color-gris);
+    font-family: var(--otra-fuente);
+    outline: none;
+    border-radius: var(--__internal__border-radius);
+    border: 2px solid var(--color-gris);
+    border-bottom: 6px solid var(--color-gris);
+    margin: 10px;
+    transition: all 0.1s;
+    display: inline-flex;
+    padding: 12px 16px;
+    color: var(--color-duo-super);
+    width: 330px;
+    height: 46px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.textoButtons{
+    font-family: var(--otra-fuente);
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--color-duo-super);
+}
+.button-section{
+    width: 331px;
+    height: 50px;
+    background-color: var(--color-blanco);
+    box-shadow: 0 5px 0 var(--color-gris);
+    font-family: var(--otra-fuente);
+    font-weight: bold;
+    letter-spacing: 1px;
+    outline: none;
+    border-radius: var(--__internal__border-radius);
+    border: 2px solid var(--color-gris);
+    border-bottom: 6px solid var(--color-gris);
+    margin: 10px;
+    transition: all 0.1s;
+    display: inline-flex;
+    padding: 12px 16px;
+    color: var(--color-azul);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.textAzul{
+    text-decoration: none; /* Quitar el subrayado */
+    color: var(--color-azul); 
+}
+footer {
+    background: var(--principal-color);
+    font-family: var(--fuente);
+    text-align: center; /* Centra horizontalmente el contenido */
+    margin-top: -10px;
+}
+
+footer ul {
+    list-style: none;
+    display: inline-block; /* Alinea los elementos ul horizontalmente */
+    color: var(--ul-footer);
+    width: 178px;
+    height: 412.6px;
+    cursor: pointer;
+    vertical-align: top;
+    text-align: left;
+}
+
+footer h3 {
+    font-weight: 100;
+    margin-bottom: 0;
+    color: var(--h3-footer);
+}
+.last-one {
+    margin-top: 20px; /* Cambia el valor según lo que necesites */
+    background-color: var(--principal-color);
+    margin-top: -18px;
+    margin-bottom: auto;
+}
+.last-one ul {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos de la lista se envuelvan a una nueva línea cuando no haya suficiente espacio */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    padding: 0; /* Quita el relleno predeterminado */
+    list-style: none;
+}
+
+.last-one li {
+    margin: 8px 12px; /* Espacio entre los elementos */
+    cursor: pointer;
+    color: var(--ul-footer);
+}
+.last-one h2{
+    color: var(--h3-footer);
+}
+`;
+
+document.head.appendChild(styleElement);
+
+// Creación del div content
 const contentDiv = document.createElement("div");
 contentDiv.className = "content";
 
-// Crear el div flags
+// Creación del div flags
 const flagsDiv = document.createElement("div");
 flagsDiv.id = "flags";
 
-// Crear el div myContainer
+// Creación del div myContainer
 const containerDiv = document.createElement("div");
 containerDiv.id = "myContainer";
 
@@ -55,6 +473,7 @@ containerDiv.innerHTML = `<div class="container">
 </div>
 `;
 
+// Carrusel de las banderas mediante un innerHTML
 flagsDiv.innerHTML = `<div class="flags">
 <nav class="flecha-container">
     <svg class="flecha-izquierda" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -135,6 +554,7 @@ flagsDiv.innerHTML = `<div class="flags">
 </div>
 `;
 
+// Las sections de los SVG con texto
 const despuesHeader = document.createElement("div");
 despuesHeader.className = "sections";
 
@@ -182,76 +602,63 @@ despuesHeader.innerHTML =
 document.body.appendChild(despuesHeader);
 
 const scrolleableMontado = document.createElement("div");
-scrolleableMontado.className = "scroll";
+scrolleableMontado.className = "scrolleable"; // Cambiando la clase a "scrolleable"
+
+scrolleableMontado.style.backgroundColor = "#E1F5FF";
 
 scrolleableMontado.innerHTML = `
-<div class="scrolleable" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 988px; height: 530px; margin: 0 auto;">
+<div class="scrolleable" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 988px; height: 530px; margin: 0 auto; background-image: url('scrolleable/background.svg'), url('scrolleable/prueba1.svg');">
   <h1 style="width: 583px; height: 240px; display: flex; align-items: center; justify-content: center; text-align: center;">aprende cuando quieras y donde quieras</h1>
   <div style="display: flex; justify-content: center; margin-top: 20px;">
     <button id="oneBoton" type="button" style="width: 180px; height: 62px; position: relative;">
-      <i class="fa fa-apple" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 34px; color: var(--color-gris);"></i>
-      <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">Descárgalo en<br/>App Store</span>
-    </button>
+      <i class="fa fa-apple" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 34px; color: var(--color-botones-enemigos);"></i>
+      <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: var(--color-botones-enemigos)">Descárgalo en<br/>App Store</span>
+    </button> 
     <button id="twoBoton" href="//play.google.com/store/apps/details?hl=es&amp;id=com.duolingo&amp;referrer=utm_source%3Dduolingo.com%26utm_medium%3Dduolingo_web%26utm_content%3Ddownload_button%26utm_campaign%3Dsplash" tabindex="0" style="width: 180px; height: 62px; position: relative;">
-      <i class="fab fa-google-play" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 34px; color: var(--color-gris);"></i>
-      <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">Disponible en<br/>Google Play</span>
+      <i class="fab fa-google-play" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 34px; color: var(--color-botones-enemigos);"></i>
+      <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: var(--color-botones-enemigos);">Disponible en<br/>Google Play</span>
     </button>
+  </div>
+  
+  <!-- Contenedor del video -->
+  <div id="videoContainer" style="display: flex; justify-content: center; align-items: center; height: 50vh; max-width: 40%;">
+    <video id="videoElement" src="scrolleable/scroll.mp4" muted autoplay loop style="max-width: 100%;"></video>
   </div>
 </div>
 `;
 
 document.body.appendChild(scrolleableMontado);
 
-const scrolleableReal = document.createElement("div");
-scrolleableReal.id = "animationContainer";
-document.body.appendChild(scrolleableReal);
+// Función para reproducir el video cuando se hace scroll
+function playVideoOnScroll() {
+    const videoContainer = document.getElementById("videoContainer");
+    const videoElement = document.getElementById("videoElement");
 
-// Creamos el contenedor de la animación
-const animationContainer = document.getElementById("animationContainer");
-animationContainer.style.position = "relative"; // Añadimos posición relativa para poder posicionar el GIF dentro
+    const windowHeight = window.innerHeight;
+    const videoTop = videoContainer.getBoundingClientRect().top;
 
-// Establecer la ruta del GIF
-const gifSrc = "images/duolingo.gif";
-
-// Crear el elemento de imagen GIF
-const gifImage = document.createElement("img");
-gifImage.src = gifSrc;
-gifImage.style.position = "absolute"; // Añadimos posición absoluta para poder ajustar la posición del GIF
-gifImage.style.top = "0"; // Alineamos el GIF al principio del contenedor
-gifImage.style.left = "0"; // Alineamos el GIF a la izquierda del contenedor
-animationContainer.appendChild(gifImage);
-
-// Función para obtener la posición actual del scroll en relación con el documento completo
-function getScrollPercentage() {
-  const windowHeight = window.innerHeight;
-  const documentHeight = document.documentElement.scrollHeight;
-  const scrollTop = window.scrollY;
-  const scrollBottom = scrollTop + windowHeight;
-  const scrollPercentage = (scrollBottom / documentHeight) * 100;
-  return scrollPercentage;
+    if (videoTop < windowHeight && videoTop > -videoContainer.offsetHeight) {
+        // Reproducir el video si está dentro del viewport
+        videoElement.play().catch(function(error) {
+            // Manejar cualquier error de reproducción
+            console.error("Error al reproducir el video:", error);
+        });
+    } else {
+        // Pausar el video si está fuera del viewport
+        videoElement.pause();
+    }
 }
 
-// Función para sincronizar la posición del GIF con la posición del scroll
-function syncGifPosition() {
-  const scrollPercentage = getScrollPercentage();
-  const gifDuration = 5000; // Duración del GIF en milisegundos
-  const gifPosition = (scrollPercentage / 100) * gifDuration;
-  gifImage.style.objectPosition = `0px -${gifPosition}px`;
-}
+// Agregamos el controlador de eventos al hacer scroll
+window.addEventListener("scroll", playVideoOnScroll);
 
-// Función para manejar el evento de desplazamiento
-function handleScroll() {
-  syncGifPosition();
-}
-
-// Agregar el controlador de eventos al desplazarse
-window.addEventListener("scroll", handleScroll);
-
-// Sincronizar la posición del GIF cuando se cargue la página
-window.addEventListener("load", syncGifPosition);
+// Reproducir el video automáticamente al cargar la página
+playVideoOnScroll();
 
 
-// Crear el contenedor principal
+
+
+// Crear el contenedor principal del super Duolingo
 const superDuo = document.createElement("div");
 superDuo.className = "super";
 superDuo.style.cssText = "display: flex; align-items: center; justify-content: center; gap: 48px; max-width: 100%; width: 100%; height: 900px;";
@@ -290,7 +697,7 @@ const button = document.createElement("button");
 button.className = "animate";
 const buttonText = document.createElement("span");
 buttonText.className = "textoButtons";
-buttonText.textContent = "Prueba 2 semanas gratis";
+buttonText.textContent = "PRUEBA 2 SEMANAS GRATIS";
 button.appendChild(buttonText);
 contentContainer.appendChild(button);
 
@@ -368,6 +775,10 @@ buttonElement.textContent = "EMPIEZA AHORA";
 buttonElement.style.width = "330px";
 buttonElement.style.height = "50px";
 buttonElement.style.display = "block"; // Hacer que el botón sea un bloque para centrarlo
+buttonElement.style.cursor = "pointer";
+buttonElement.style.fontFamily = "var(--otra-fuente)";
+buttonElement.style.fontWeight = "bold";
+buttonElement.style.letterSpacing = "1px";
 
 // Agregar el h1 y luego el botón al contenedor antes del footer
 antesFooter.appendChild(h1Element);
