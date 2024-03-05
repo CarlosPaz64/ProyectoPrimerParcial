@@ -36,6 +36,7 @@ button{
     color: var(--color-blanco);
     text-align: center;
     cursor: pointer;
+    font-weight: bold;
 }
 /*Estilos del body y header*/
 body {
