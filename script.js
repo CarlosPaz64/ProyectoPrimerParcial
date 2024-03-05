@@ -188,6 +188,7 @@ button:hover{
 .flecha-izquierda:hover,
 .flecha-derecha:hover {
     cursor: pointer; /* Cambiar el cursor al pasar el mouse sobre las flechas */
+    /*NO FUNCIONA :DDDD*/
 }
 
 .banderas {
@@ -198,6 +199,7 @@ button:hover{
     margin-left: auto; /* Empujar las banderas hacia el final del contenedor */
     display: flex;
     transition: transform 0.3s ease; /* Agregar transición suave al desplazamiento */
+    /*NO FUNCIONA :DDDD*/
 }
 
 .banderas ul {
@@ -207,25 +209,30 @@ button:hover{
     max-width: 1036px;
     overflow-x: hidden; /* Permite hacer scroll horizontal si hay más banderas que caben */
     align-items: center;
+    /*NO FUNCIONA :DDDD*/
 }
 
 .banderas ul li {
     display: inline-block; /* Hace que los elementos de la lista se muestren en línea */
     margin-right: 10px; /* Espacio entre los elementos de la lista */
     vertical-align: middle;
+    /*NO FUNCIONA :DDDD*/
 }
 .banderas ul li span {
     text-decoration: none;
+    /*NO FUNCIONA :DDDD*/
 }
 .flags .banderas{
     display: flex;
     align-items: center; /* Centra verticalmente el contenido */
+    /*NO FUNCIONA :DDDD*/
 }
 .flags .banderas ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
+    /*NO FUNCIONA :DDDD*/
 }
 .flags .banderas ul li {
     margin-right: 10px;
@@ -237,6 +244,7 @@ button:hover{
     align-items: center; /* Centramos verticalmente los elementos */
     color: var(--color-gris);
     text-decoration: none !important; /* Evita que los enlaces estén subrayados */
+    /*NO FUNCIONA :DDDD*/
 }
 /*Debajo del header*/
 .left, .right{
@@ -639,11 +647,9 @@ function playVideoOnScroll() {
     if (videoTop < windowHeight && videoTop > -videoContainer.offsetHeight) {
         // Reproducir el video si está dentro del viewport
         videoElement.play().catch(function(error) {
-            // Manejar cualquier error de reproducción
             console.error("Error al reproducir el video:", error);
         });
     } else {
-        // Pausar el video si está fuera del viewport
         videoElement.pause();
     }
 }
@@ -788,9 +794,9 @@ antesFooter.style.display = "flex";
 antesFooter.style.flexDirection = "column"; // Apilar elementos verticalmente
 antesFooter.style.justifyContent = "center";
 antesFooter.style.alignItems = "center";
-antesFooter.style.marginBottom = "-280px"; // Ajustar según sea necesario
+antesFooter.style.marginBottom = "-280px";
 
-//antesFooter.style.height = "100vh"; // Ajustar la altura si es necesario
+//antesFooter.style.height = "100vh"; 
 
 // Agregar el contenedor antes del footer al documento
 document.body.appendChild(antesFooter);
@@ -801,7 +807,7 @@ var imagFoot = document.createElement("img");
 imagFoot.src = "images/animacionFooter.svg";
 
 
-pocoAntesFooter.style.paddingTop = "5px"; // Ajustar según sea necesario
+pocoAntesFooter.style.paddingTop = "5px";
 
 pocoAntesFooter.appendChild(imagFoot);
 
