@@ -202,7 +202,7 @@ button:hover{
 
 .banderas ul {
     list-style-type: none; /* Quita los estilos de la lista */
-    margin: auto; /* Quita el margen predeterminado de la lista */
+    margin: 0; /* Quita el margen predeterminado de la lista */
     padding: 0; /* Quita el relleno predeterminado de la lista */
     max-width: 1036px;
     grid-gap: 20px;
@@ -550,35 +550,9 @@ flagsDiv.innerHTML = `<div class="flags">
 </div>
 `;
 
-// Obtener el contenedor del carrusel y las flechas de dirección
-const flagsContainer = document.querySelector('.flags .banderas ul');
-const leftArrow = document.querySelector('.flecha-izquierda');
-const rightArrow = document.querySelector('.flecha-derecha');
 
-// Definir el desplazamiento horizontal inicial y el tamaño de desplazamiento
-let scrollPosition = 0;
-const scrollStep = 200; // Puedes ajustar este valor según sea necesario
 
-// Función para desplazar a la izquierda
-leftArrow.addEventListener('click', function() {
-    // Calcula la nueva posición de desplazamiento
-    scrollPosition -= scrollStep;
-    if (scrollPosition < 0) scrollPosition = 0; // Evita desplazarse más allá del inicio
 
-    // Aplica el desplazamiento al contenedor del carrusel
-    flagsContainer.style.transform = `translateX(-${scrollPosition}px)`;
-});
-
-// Función para desplazar a la derecha
-rightArrow.addEventListener('click', function() {
-    // Calcula la nueva posición de desplazamiento
-    scrollPosition += scrollStep;
-    const maxScroll = flagsContainer.scrollWidth - flagsContainer.clientWidth;
-    if (scrollPosition > maxScroll) scrollPosition = maxScroll; // Evita desplazarse más allá del final
-
-    // Aplica el desplazamiento al contenedor del carrusel
-    flagsContainer.style.transform = `translateX(-${scrollPosition}px)`;
-});
 
 
 
