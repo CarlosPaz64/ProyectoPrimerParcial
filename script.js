@@ -1,26 +1,5 @@
 const styleElement = document.createElement('style');
 styleElement.textContent = `
-/*Importaciones de internet que se usaron en la página de duolingo*/
-/*Importacion del Feather Bold como tipo de letra principal*/
-@import url(https://db.onlinewebfonts.com/c/14936bb7a4b6575fd2eee80a3ab52cc2?family=Feather+Bold);
-@import url(https://db.onlinewebfonts.com/c/ab596f21664c5582567537d241e2a53e?family=DIN+Next+Rounded+LT+W01+Regular);
-
-:root{
-    --fuente:  'Feather Bold', sans-serif;
-    --principal-color: #58cc02;
-    --color-gris:  #808080;
-    --color-botones: #58a700;
-    --web-ui_button-border-radius: 12px;
-    --web-ui_button-line-height: normal;
-    --__internal__border-radius: var(--web-ui_button-border-radius, 12px);
-    --color-blanco: #ffffff;
-    --otra-fuente: 'DIN Next Rounded LT W01 Regular', sans-serif;
-    --color-azul:  #007aff;
-    --color-duo-super: rgba(16, 15, 62);
-    --h3-footer: #D7FFB8;
-    --ul-footer: #A5ED6E;
-    --color-botones-enemigos: #434343;
-}
 /*Estilo del texto arriba de los botones*/
 #h1{
     text-align: center; /* Centra horizontalmente el texto */
