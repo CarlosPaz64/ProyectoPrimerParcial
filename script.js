@@ -205,8 +205,6 @@ button:hover{
     margin: 0; /* Quita el margen predeterminado de la lista */
     padding: 0; /* Quita el relleno predeterminado de la lista */
     max-width: 1036px;
-    grid-gap: 20px;
-    display: grid;
     overflow-x: hidden; /* Permite hacer scroll horizontal si hay más banderas que caben */
     align-items: center;
 }
@@ -549,7 +547,6 @@ flagsDiv.innerHTML = `<div class="flags">
 </nav>
 </div>
 `;
-
 
 
 
